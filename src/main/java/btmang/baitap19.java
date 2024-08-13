@@ -4,8 +4,9 @@
  */
 package btmang;
 
+import java.util.Random;
 import java.util.Scanner;
-
+import java.util.Arrays;
 /**
  *
  * @author ADMIN
@@ -17,40 +18,47 @@ public class baitap19 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        double []a;
+        int []a;
         int n;
         Scanner sc = new Scanner(System.in);
         System.out.print("cho biet so phan tu:");
         n = sc.nextInt();
-        a = new double [n];
+        a = new int [n];
         //Nhap
-        nhapMang(a, sc);
+        phatSinhMang(a);
         //a.xuat mang ra man hinh
-        System.out.println("\nMang so thuc");
+        System.out.println("\nMang a:");
         xuatMang(a);
-        //b.Tinh tong mang
-        double tb = tinhTB(a);
-        System.out.print("\nNhap gia tri trung binh" + tb);
-        //c.Dem duong le trong mang
-        double min = timMin(a);
-        System.out.print("\nPhan tu nho nhat:" + min);
+        
+        sapXepTang(a);
+        System.out.print("\nMang sap xep:");
+        xuatMang(a);
+        System.out.print("\nSo nguyen x:");
+        int x = sc.nextInt();
+        System.out.print("\nPhan tu la uoc so cua x:");
+        lienKetUocSo(a, x);
     }
-    public static void nhapMang(double [] a, Scanner sc) {
+    public static void  phatSinhMang(int[] a) {
+        Random rd = new Random();
         for (int i = 0; i < a.length; i++) {
-            System.out.print("Cho biet gia tri a[" + i + "]:");
-            a[i] = sc.nextInt();
+            a[i] = rd.nextInt(50);
+            
         }
     }
-    public static void xuatMang(double [] a) {
-        for (double item : a) {
+    public static void xuatMang(int[] a) {
+        for (int x : a) {
+            System.out.print(x + " ");
+            
+        }
+    }
+    public static void sapXepTang(int[] a) {
+        Arrays.sort(a);
+    }
+    public static void lienKetUocSo(int[] a, int x) {
+        for (int item  : a) {
+            if (item>0 && item>0) {
             System.out.print(item + " ");
         }
-    }
-    public static int tinhTB (double [] a) {
-        return 0;
-    }
-    public static int timMin(double [] a) {
-
-     return 0;
+        }
     }
 }

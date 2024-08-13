@@ -47,10 +47,21 @@ public class baitap17 {
         }
     }
     public static int tinhTB (double [] a) {
-        return 0;
+        double sum = 0;
+        for (double x : a) {
+            sum += x; //s=s+x;
+        }
+        double average = sum /a.length;
+        return (int) average;
     }
     public static int timMin(double [] a) {
 
-     return 0;
+     double min = a[0];
+        for (double x : a) {
+            if (x > min) {
+                min = x;
+            }
+        }
+        return (int) min;
     }
 }
